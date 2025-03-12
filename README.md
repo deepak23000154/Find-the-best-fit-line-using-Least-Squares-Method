@@ -1,4 +1,5 @@
-# Implementation of Univariate Linear Regression
+# Ex-1:Implementation of Univariate Linear Regression
+
 ## AIM:
 To implement univariate Linear Regression to fit a straight line using least squares.
 
@@ -17,44 +18,49 @@ To implement univariate Linear Regression to fit a straight line using least squ
 6. Obtain the straight line equation Y=mX+b and plot the scatterplot.
 
 ## Program:
-```
-Program to implement univariate Linear Regression to fit a straight line using least squares.
-Developed by: DEEPAK.R
-RegisterNumber: 212223040031
+Program to implement univariate Linear Regression to fit a straight line using least squares.<br>
+Developed by: DEEPAK.R<br>
+Register Number: 212223040031<br>
 
+```
 import numpy as np
 import matplotlib.pyplot as plt
-
-x=np.array(eval(input()))
-y=np.array(eval(input()))
-
-x_mean=np.mean(x)
-y_mean=np.mean(y)
+X=np.array(eval(input()))
+Y=np.array(eval(input()))
+X_mean=np.mean(X)
+print(X_mean)
+Y_mean=np.mean(Y)
+print(Y_mean)
 num=0
-denom=0
-
-for i in range(len(x)):
-    num+=(x[i]-x_mean)*(y[i]-y_mean)
-    denom+=(x[i]-x_mean)**2
-    
-m=num/denom
-
-b=y_mean-m*x_mean
-
-print("Slope:",m)
-print("Y-intercept:",b)
-
-y_predicted=m*x+b
-print("Y-predicted:",y_predicted)
-
-plt.scatter(x,y)
-plt.plot(x,y_predicted,color='red')
-plt.show()
-
+denum=0
+for i in range(len(X)):
+  num+=(X[i]-X_mean)*(Y[i]-Y_mean)
+  denum+=(X[i]-X_mean)**2
+m=num/denum
+print(m)
+b=Y_mean - m*X_mean
+print(b)
+Y_pred=m*X+b
+print(Y_pred)
+plt.scatter(X,Y,color='red')
+plt.plot(X,Y_pred,color='grey') 
+plt.show() 
 ```
 
 ## Output:
-![Screenshot 2025-02-24 162432](https://github.com/user-attachments/assets/3641b9b4-2d06-4f23-8719-cf2dbd2d58c8)
+### X and Y Values
+![1)](https://github.com/user-attachments/assets/b4e27c65-cb28-467a-9a36-56f6117c21f2)
+### X_mean and Y_mean
+![2)](https://github.com/user-attachments/assets/cb7c3cf8-603f-40aa-a1b3-f85a16be87f5)
+### Slope and Intercept
+![3)](https://github.com/user-attachments/assets/01a3b20e-3d19-4ad4-a1d5-81455fdde280)
+### Predicted Y Values
+![4)](https://github.com/user-attachments/assets/2d784a41-3a3a-4465-8e2f-a907a9d35f4f)
+### Graph
+![5)](https://github.com/user-attachments/assets/c1ab16be-d1da-47c3-9802-3a4581e33f35)
+
+
+
 
 
 
